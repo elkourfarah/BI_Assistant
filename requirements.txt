@@ -1,0 +1,12 @@
+python-dotenv
+python-docx
+requests
+tenacity
+pbixray
+pydantic
+groq
+sqlglot
+pyyaml
+openpyxl
+pandas
+xlrd

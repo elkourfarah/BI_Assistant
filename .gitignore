@@ -1,0 +1,21 @@
+# Données sensibles
+.env
+*.env
+
+# Fichiers lourds / sensibles (Power BI, Excel, CSV, SQL, Word)
+*.pbix
+*.xlsx
+*.csv
+*.sql
+*.docx
+
+# Dossiers générés
+output/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
