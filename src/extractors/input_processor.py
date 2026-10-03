@@ -91,8 +91,25 @@ class InputProcessor:
         for raw_target in targets:
             target_path = Path(raw_target).expanduser().resolve()
             if not target_path.exists():
-                LOGGER.warning("Cible introuvable (ignorée) : %s", raw_target)
-                continue
+                # Recherche intelligente : si le chemin relatif complet a été omis (ex: juste le nom de fichier)
+                filename = Path(raw_target).name
+                candidate = None
+                samples_dir = Path.cwd() / "samples"
+                if samples_dir.exists():
+                    matches = list(samples_dir.rglob(filename))
+                    if matches:
+                        candidate = matches[0]
+                if not candidate:
+                    matches = [p for p in Path.cwd().rglob(filename) if "venv" not in p.parts and ".git" not in p.parts and ".pytest_cache" not in p.parts]
+                    if matches:
+                        candidate = matches[0]
+
+                if candidate and candidate.exists():
+                    LOGGER.info("Chemin auto-résolu : '%s' -> '%s'", raw_target, candidate)
+                    target_path = candidate
+                else:
+                    LOGGER.warning("Cible introuvable (ignorée) : %s", raw_target)
+                    continue
 
             if target_path.is_file():
                 self._classify_file(target_path, discovered)

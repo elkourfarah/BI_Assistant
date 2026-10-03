@@ -1,21 +1,58 @@
-# Données sensibles
+# ==============================================================================
+# Git Ignore - Assistant BI Keyrus
+# ==============================================================================
+
+# 1. Variables d'environnement & Secrets (CRITIQUE : Ne jamais committer !)
 .env
 *.env
+!.env.example
+*.pem
+*.key
+credentials.json
 
-# Fichiers lourds / sensibles (Power BI, Excel, CSV, SQL, Word)
-*.pbix
-*.xlsx
-*.csv
-*.sql
-*.docx
-
-# Dossiers générés
-output/
+# 2. Environnements virtuels Python
 venv/
-__pycache__/
-.pytest_cache/
-*.pyc
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
 
-# OS
+# 3. Cache Python & Fichiers compilés
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# 4. Fichiers générés / Outputs de démonstration
+# On ignore les sorties générées pour garder le dépôt propre
+output/*.docx
+output/*.json
+output/*.mmd
+output/*.png
+!output/.gitkeep
+
+# 5. IDEs & Éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
 Thumbs.db
+
+# 6. Divers
+*.log
+scratch/
+
+# 7. Présentations, scripts de diaporama & notes internes de compréhension
+*.pptx
+Presentation_BI_Keyrus*
+SPEECH_PRESENTATION.md
+create_presentation.py
+slide_preview/
