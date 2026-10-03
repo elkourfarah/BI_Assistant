@@ -1,4 +1,4 @@
-# 🚀 Assistant BI Keyrus — Générateur Automatique de Spécifications Techniques Détaillées (STD)
+# 🚀 Assistant BI  — Générateur Automatique de Spécifications Techniques Détaillées (STD)
 
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Tests](https://img.shields.io/badge/tests-18%2F18%20passed-brightgreen.svg)]()
@@ -11,14 +11,14 @@
 
 ## 📋 Présentation du Projet
 
-Dans le cadre des projets de Business Intelligence et de Data Engineering chez **Keyrus**, la rédaction de la documentation technique (Spécifications Techniques Détaillées - STD) d'un projet décisionnel est une tâche critique mais chronophage (généralement 2 à 3 jours ouvrés pour un consultant ou data architecte).
+Dans le cadre des projets de Business Intelligence et de Data Engineering , la rédaction de la documentation technique (Spécifications Techniques Détaillées - STD) d'un projet décisionnel est une tâche critique mais chronophage (généralement 2 à 3 jours ouvrés pour un consultant ou data architecte).
 
-**L'Assistant BI Keyrus** réduit ce cycle de **3 jours à moins de 60 secondes** :
+**L'Assistant BI ** réduit ce cycle de **3 jours à moins de 60 secondes** :
 - **Extraction automatique** des modèles tabulaires Power BI (`.pbix`), scripts SQL (DDL/DML/ETL) et classeurs Excel.
 - **Parser AST SQL multi-dialectes** (Oracle, Snowflake, T-SQL, Spark, Postgres via `sqlglot`).
 - **Génération assistée par LLM** (Groq) pour l'enrichissement sémantique des colonnes, règles de gestion et glossaire métier.
 - **Bouclier anti-hallucination** : strict respect des schémas réels (aucune table ni métrique inventée).
-- **Livrable Word client** (`.docx`) prêt à l'emploi respectant la charte graphique et typographique de Keyrus.
+- **Livrable Word client** (`.docx`) prêt à l'emploi respectant la charte graphique et typographique.
 
 ---
 
@@ -63,7 +63,7 @@ Dans le cadre des projets de Business Intelligence et de Data Engineering chez *
 ### 1. Cloner le dépôt
 ```bash
 git clone <URL_DU_DEPOT_GIT>
-cd Assistant_BI_Keyrus
+cd Assistant_BI
 ```
 
 ### 2. Créer et activer l'environnement virtuel
@@ -113,7 +113,7 @@ python main.py --pbix samples/pbix/Supplier-Quality-Analysis-Sample-PBIX.pbix --
 
 2. **Analyser des scripts SQL (Data Warehouse / ETL) :**
 ```powershell
-python main.py --sql samples/sql/ --dialect oracle --project "DWH Keyrus CRM"
+python main.py --sql samples/sql/ --dialect oracle --project "DWH CRM"
 ```
 
 3. **Analyser des fichiers Excel de mapping et référentiels :**
@@ -155,7 +155,7 @@ pytest tests/ -v
 ## 📂 Structure du Projet
 
 ```text
-Assistant_BI_Keyrus/
+Assistant_BI/
 ├── .env.example            # Gabarit de configuration des variables d'environnement
 ├── .gitignore              # Exclusion des secrets, venvs et caches
 ├── README.md               # Documentation complète du projet
@@ -194,4 +194,4 @@ Assistant_BI_Keyrus/
 
 ## 👤 Auteur
 
-- **Farah Elkour** — Data & BI Consultant / Ingénieur Data Keyrus & ESPRIT
+- **Farah Elkour** — Data & BI Consultant / Ingénieur Data & ESPRIT
