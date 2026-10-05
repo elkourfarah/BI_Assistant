@@ -56,3 +56,10 @@ Presentation_BI_Keyrus*
 SPEECH_PRESENTATION.md
 create_presentation.py
 slide_preview/
+
+# 8. DONNÉES CLIENTS — CONFIDENTIEL (local uniquement, jamais committer)
+# Ces fichiers sont nécessaires en local pour les tests réels,
+# mais ne doivent JAMAIS apparaître dans le dépôt Git.
+samples/sql/query_config_*.sql
+samples/sql/DWH_*.sql
+samples/csv/params_config.csv
